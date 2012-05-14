@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>name:</b>
+  <%= @age_group_category.name %>
+</p>
+
+<p>
+  <b>description:</b>
+  <%= @age_group_category.description %>
+</p>
+<%= link_to 'Edit', edit_age_group_category_path(@age_group_category) %> |
+<%= link_to 'Back', age_group_categories_path %>

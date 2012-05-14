@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>race id:</b>
+  <%= @pricing.race_id %>
+</p>
+
+<p>
+  <b>pricing type:</b>
+  <%= @pricing.price_type %>
+</p>
+<p>
+  <b>starts on:</b>
+  <%= @pricing.starts_on %>
+</p>
+
+<p>
+  <b>ends on:</b>
+  <%= @pricing.ends_on %>
+</p>
+<p>
+  <b>promo code:</b>
+  <%= @pricing.promo_code %>
+</p>
+
+<p>
+  <b>active:</b>
+  <%= @pricing.active %>
+</p>
+<p>
+  <b>amount:</b>
+  <%= @pricing.amount %>
+</p>
+<p>
+  <b>comments:</b>
+  <%= @pricing.comments %>
+</p>
+
+
+<%= link_to 'Edit', edit_pricing_path(@pricing) %> |
+<%= link_to 'Back', pricings_path %>

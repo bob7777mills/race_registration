@@ -1,0 +1,48 @@
+<%= nested_form_for @age_group_category, :validate => true do |f| %>
+  <% if @age_group_category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@age_group_category.errors.count, "error") %> prohibited this age_group_category from being saved:</h2>
+
+      <ul>
+      <% @age_group_category.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </div>
+
+    <table>
+      <tr>
+
+        <td>gender </td>
+        <td>min_age</td>
+        <td>max_age</td>
+        <td>comments</td>
+        <td></td>
+
+
+      </tr>
+      <%= f.fields_for :age_group_details do |age_group_detail_form| %>
+       <tr>
+          <td><%= age_group_detail_form.text_field :gender %> </td>
+          <td><%= age_group_detail_form.text_field :min_age %></td>
+          <td><%= age_group_detail_form.text_field :max_age %></td>
+          <td><%= age_group_detail_form.text_field :comments %></td>
+         <td><%= age_group_detail_form.link_to_remove "Remove this age group detail record" %></td>
+        </tr>
+       <% end %>
+
+    </table>
+    <%= f.link_to_add "Add an age group detail record", :age_group_details %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

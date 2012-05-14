@@ -1,0 +1,38 @@
+<%= form_for(@age_group_detail) do |f| %>
+  <% if @age_group_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@age_group_detail.errors.count, "error") %> prohibited this age_group_detail from being saved:</h2>
+
+      <ul>
+      <% @age_group_detail.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+      <%= f.label :age_group_category_id %><br />
+      <%= f.collection_select :age_group_category_id, AgeGroupCategory.all, :id, :age_group_category_display_values, :prompt => "Select an age group category" %>
+
+    </div>
+    <div class="field">
+      <%= f.label :gender %><br />
+      <%= f.text_field :gender %>
+    </div>
+    <div class="field">
+      <%= f.label :min_age %><br />
+      <%= f.text_field :min_age %>
+    </div>
+    <div class="field">
+      <%= f.label :max_age %><br />
+      <%= f.text_field :max_age %>
+    </div>
+    <div class="field">
+      <%= f.label :comments %><br />
+      <%= f.text_field :comments %>
+    </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

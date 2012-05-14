@@ -1,0 +1,52 @@
+<%= form_for(@event) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="field">
+      <%= f.label :organizer_id %>
+      <%= f.collection_select :organizer_id, Organizer.all, :id, :organizer_display_values, :prompt => "Select an organizer" %>
+    </div>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </div>
+    <div class="field">
+      <%= f.label :starts_on %>
+      <%= f.text_field :starts_on %>
+    </div>
+    <div class="field">
+      <%= f.label :ends_on %>
+      <%= f.text_field :ends_on %>
+    </div>
+    <div class="field">
+      <%= f.label :address %>
+      <%= f.text_field :address %>
+    </div>
+    <div class="field">
+      <%= f.label :city %>
+      <%= f.text_field :city %>
+    </div>
+    <div class="field">
+      <%= f.label :state_cd %>
+      <%= f.collection_select :state_cd, State.all, :abbrev, :name, :prompt => "Select a state" %>
+    </div>
+    <div class="field">
+      <%= f.label :zip_cd %>
+      <%= f.text_field :zip_cd %>
+    </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

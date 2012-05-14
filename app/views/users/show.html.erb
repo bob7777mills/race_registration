@@ -1,0 +1,91 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <b>first_name:</b>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <b>last:</b>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <b>middle_init:</b>
+  <%= @user.middle_init %>
+</p>
+
+<p>
+  <b>born_on:</b>
+  <%= @user.born_on %>
+</p>
+
+<p>
+  <b>gender:</b>
+  <%= @user.gender %>
+</p>
+
+<p>
+  <b>address1:</b>
+  <%= @user.address1 %>
+</p>
+
+<p>
+  <b>address2:</b>
+  <%= @user.address2 %>
+</p>
+
+<p>
+  <b>city:</b>
+  <%= @user.city %>
+</p>
+
+<p>
+  <b>state_cd:</b>
+  <%= @user.state_cd %>
+</p>
+
+<p>
+  <b>zip_cd:</b>
+  <%= @user.zip_cd %>
+</p>
+
+<p>
+  <b>phone_num:</b>
+  <%= @user.phone_num %>
+</p>
+
+<p>
+  <b>cell_num:</b>
+  <%= @user.cell_num %>
+</p>
+
+<p>
+  <b>email_address:</b>
+  <%= @user.email_address %>
+</p>
+
+<p>
+  <b>password:</b>
+  <%= @user.password %>
+</p>
+
+<p>
+  <b>swim_100m_time:</b>
+  <%= @user.swim_100m_time %>
+</p>
+
+<p>
+  <b>treat_as_user:</b>
+  <%= @user.treat_as_user %>
+</p>
+
+
+<p>
+  <b>notify_about_events:</b>
+  <%= @user.notify_about_events %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

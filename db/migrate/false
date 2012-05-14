@@ -1,0 +1,6 @@
+      invoke  active_record
+      create    db/migrate/20120507150935_create_organizers.rb
+      create    app/models/organizer.rb
+      invoke    test_unit
+      create      test/unit/organizer_test.rb
+      create      test/fixtures/organizers.yml

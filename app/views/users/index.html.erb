@@ -1,0 +1,58 @@
+<h1>Listing users</h1>
+
+<table>
+  <tr>
+
+    <th>first</th>
+    <th>last</th>
+    <th>middle init</th>
+    <th>dob</th>
+    <th>M/F</th>
+    <th>addr1</th>
+    <th>addr2</th>
+    <th>city</th>
+    <th>state</th>
+    <th>zip</th>
+    <th>state</th>
+    <th>phone</th>
+    <th>cell</th>
+    <th>swim 100m</th>
+    <th>create user</th>
+    <th>notify about other events</th>
+    <th></th>
+
+    <th></th>
+    <th></th>
+    <th></th>
+
+
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.first_name %></td>
+    <td><%= user.last_name %></td>
+    <td><%= user.middle_init %></td>
+    <td><%= user.born_on %></td>
+    <td><%= user.gender %></td>
+    <td><%= user.address1 %></td>
+    <td><%= user.address2 %></td>
+    <td><%= user.city %></td>
+    <td><%= user.state_cd %></td>
+    <td><%= user.zip_cd %></td>
+    <td><%= user.phone_num %></td>
+    <td><%= user.cell_num %></td>
+    <td><%= user.email_address %></td>
+    <td><%= user.swim_100m_time %></td>
+    <td><%= user.treat_as_user %></td>
+    <td><%= user.notify_about_events %></td>
+     <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User', new_user_path %>

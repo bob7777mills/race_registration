@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @organizer.name %>
+</p>
+<p>
+  <b>Website:</b>
+  <%= @organizer.website %>
+</p>
+<p>
+  <b>Phone Number:</b>
+  <%= @organizer.phone_num %>
+</p>
+<p>
+  <b>Cell Number:</b>
+  <%= @organizer.cell_num %>
+</p>
+<p>
+  <b>Email:</b>
+  <%= @organizer.email_address %>
+</p>
+<p>
+  <b>Contact:</b>
+  <%= @organizer.contact_name %>
+</p>
+<p>
+  <b>Addr1:</b>
+  <%= @organizer.address1 %>
+</p>
+<p>
+  <b>Addr2:</b>
+  <%= @organizer.address2 %>
+</p>
+<p>
+  <b>City:</b>
+  <%= @organizer.city %>
+</p>
+<p>
+  <b>State:</b>
+  <%= @organizer.state_cd %>
+</p>
+<p>
+  <b>Zip</b>
+  <%= @organizer.zip_cd %>
+</p>
+
+
+<%= link_to 'Edit', edit_organizer_path(@organizer) %> |
+<%= link_to 'Back', organizers_path %>

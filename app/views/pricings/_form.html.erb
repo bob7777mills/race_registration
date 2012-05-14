@@ -1,0 +1,50 @@
+<%= form_for(@pricing) do |f| %>
+  <% if @pricing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pricing.errors.count, "error") %> prohibited this pricing from being saved:</h2>
+
+      <ul>
+      <% @pricing.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+      <%= f.label :race_id %><br />
+      <%= f.collection_select :race_id, Race.all, :id, :race_display_values, :prompt => "Select a race" %>
+
+    </div>
+    <div class="field">
+      <%= f.label :price_type %><br />
+      <%= f.collection_select :price_type, PricingType.all, :pricing_type, :pricing_type_display_values, :prompt => "Select a pricing type" %>
+    </div>
+    <div class="field">
+      <%= f.label :starts_on %><br />
+      <%= f.text_field :starts_on %>
+    </div>
+    <div class="field">
+      <%= f.label :ends_on %><br />
+      <%= f.text_field :ends_on %>
+    </div>
+    <div class="field">
+      <%= f.label :promo_code %><br />
+      <%= f.text_field :promo_code %>
+    </div>
+    <div class="field">
+      <%= f.label :active %><br />
+      <%= f.text_field :active %>
+    </div>
+    <div class="field">
+      <%= f.label :amount %><br />
+      <%= f.text_field :amount %>
+    </div>
+    <div class="field">
+      <%= f.label :comments %><br />
+      <%= f.text_field :comments %>
+    </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

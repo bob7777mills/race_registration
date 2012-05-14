@@ -1,0 +1,49 @@
+<%= form_for(@registration) do |f| %>
+  <% if @registration.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@registration.errors.count, "error") %> prohibited this registration from being saved:</h2>
+
+      <ul>
+      <% @registration.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="field">
+      <%= f.label :user_id %><br />
+      <%= f.collection_select :user_id, User.all, :id, :user_display_values, :prompt => "Select a user" %>
+    </div>
+    <div class="field">
+      <%= f.label :age_group_detail_id %><br />
+      <%= f.text_field :age_group_detail_id %>
+    </div>
+    <div class="field">
+      <%= f.label :pricing_id %><br />
+      <%= f.text_field :pricing_id %>
+    </div>
+    <div class="field">
+      <%= f.label :registered_at %><br />
+      <%= f.text_field :registered_at %>
+    </div>
+    <div class="field">
+      <%= f.label :waiver_signed %><br />
+      <%= f.text_field :waiver_signed %>
+    </div>
+    <div class="field">
+      <%= f.label :waiver_signed_under_18 %><br />
+      <%= f.text_field :waiver_signed_under_18 %>
+    </div>
+    <div class="field">
+      <%= f.label :confirm_code %><br />
+      <%= f.text_field :confirm_code %>
+    </div>
+    <div class="field">
+      <%= f.label :tshirt_size %><br />
+      <%= f.text_field :tshirt_size %>
+    </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>user_id:</b>
+  <%= @registration.user_id %>
+</p>
+
+<p>
+  <b>age_group_detail_id:</b>
+  <%= @registration.age_group_detail_id %>
+</p>
+<p>
+  <b>pricing_id:</b>
+  <%= @registration.pricing_id %>
+</p>
+<p>
+  <b>registered_at:</b>
+  <%= @registration.registered_at %>
+</p>
+<p>
+  <b>waiver_signed:</b>
+  <%= @registration.waiver_signed %>
+</p>
+<p>
+  <b>waiver_signed_under_18:</b>
+  <%= @registration.waiver_signed_under_18 %>
+</p>
+<p>
+  <b>confirm_code:</b>
+  <%= @registration.confirm_code %>
+</p>
+<p>
+  <b>tshirt_size:</b>
+  <%= @registration.tshirt_size %>
+</p>
+<%= link_to 'Edit', edit_registration_path(@registration) %> |
+<%= link_to 'Back', registrations_path %>

@@ -1,0 +1,38 @@
+<h1>Listing pricings</h1>
+
+<table>
+  <tr>
+    <th>race</th>
+    <th>pricing type</th>
+    <th>starts on</th>
+    <th>ends on</th>
+    <th>promo code</th>
+    <th>amount</th>
+    <th>active</th>
+    <th>comments</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pricings.each do |pricing| %>
+  <tr>
+    <td><%= pricing.race_id %></td>
+    <td><%= pricing.price_type %></td>
+    <td><%= pricing.starts_on %></td>
+    <td><%= pricing.ends_on %></td>
+    <td><%= pricing.promo_code %></td>
+    <td><%= pricing.amount %></td>
+    <td><%= pricing.active %></td>
+    <td><%= pricing.comments %></td>
+
+    <td><%= link_to 'Show', pricing %></td>
+    <td><%= link_to 'Edit', edit_pricing_path(pricing) %></td>
+    <td><%= link_to 'Destroy', pricing, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pricing', new_pricing_path %>

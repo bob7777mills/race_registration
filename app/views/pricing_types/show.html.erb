@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Pricing type:</b>
+  <%= @pricing_type.pricing_type %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @pricing_type.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_pricing_type_path(@pricing_type) %> |
+<%= link_to 'Back', pricing_types_path %>
