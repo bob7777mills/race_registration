@@ -41,6 +41,9 @@ class RegistrationsController < ApplicationController
   # POST /registrations.json
   def create
     @registration = Registration.new(params[:registration])
+    @registration.registered_at="2222-02-22 22:22:22"
+   # @pricings=Pricing.find(params[:race_id])
+   # @registration.pricing_id = @pricings.find_last_by_ends_on
 
     respond_to do |format|
       if @registration.save
@@ -80,4 +83,24 @@ class RegistrationsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  def register_step_1
+    @registration = Registration.new
+    @registration.created_at = "2199-12-31 23:59:59"
+    @registration.updated_at = "2199-12-31 23:59:59"
+    @registration.registered_at = "2199-12-31 23:59:59"
+    @registration.pricing_id = 3
+    @event = Event.find(1)
+    @races = @event.races
+    #respond_to do |format|
+    #format.html {redirect to register_step_1 }
+    #format.json {head :no_content}
+    #end
+
+
+  end
+
+
+
 end

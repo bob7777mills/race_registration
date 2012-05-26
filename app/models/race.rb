@@ -1,6 +1,6 @@
 class Race < ActiveRecord::Base
   def race_display_values
-    "#{name}"
+    "#{name}, #{starts_at}, #{description}"
   end
    has_many :pricings
    has_and_belongs_to_many :registrations

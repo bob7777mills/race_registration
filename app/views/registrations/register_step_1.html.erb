@@ -1,0 +1,59 @@
+<%= form_for(@registration) do |f| %>
+    <% if @registration.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@registration.errors.count, "error") %> prohibited this race from being saved:</h2>
+
+          <ul>
+            <% @registration.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+     <h1> Register for event:  Event: <%= @event.name %> (screen 1)</h1>
+
+    <div>
+
+
+    </div>
+
+    <p>Select a race:</p>
+    <div class="field">
+
+      <%= f.label :race_id %>
+
+      <% @races.each do |row| %>
+      <br><%= radio_button_tag 'user_id', row.id, false %>    <%= row.race_display_values %>
+       <% end %>
+
+      </div>
+
+    <div>
+      <%= f.label :registered_at %>
+      <%= f.text_field :registered_at %>
+
+    </div>
+
+    <div class="actions">
+        <%= f.submit %>
+
+
+    </div>
+
+    <p>Have an account?  Log in here!</p>
+
+  <div class="field">
+
+  <%= form_tag  do %>
+  E-mail: <%= text_field_tag :email_address %>
+  Password: <%= text_field_tag :password %>
+  <%=  submit_tag "Log in" %>
+  <% end %>
+
+  </div>
+
+
+
+
+<% end %>

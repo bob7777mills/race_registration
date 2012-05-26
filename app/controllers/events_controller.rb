@@ -37,6 +37,9 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+
+
+
   # POST /events
   # POST /events.json
   def create
@@ -80,4 +83,6 @@ class EventsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
 end

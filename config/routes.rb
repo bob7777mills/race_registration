@@ -23,6 +23,11 @@
 
   resources :users
 
+  match '/register_step_1', :to => 'registrations#register_step_1', :as => "register_step_1"
+
+  #match 'registrations/register_step_1' => 'registrations#register_step_1', :as => :register_step_1
+  #'match 'registrations/:id/register_step_2' => 'registrations#register_step_2', :as => :register_step_2
+
 
     # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -34,6 +39,8 @@
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
+
+
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
