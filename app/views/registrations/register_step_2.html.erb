@@ -1,11 +1,66 @@
 
-        <div id="error_explanation">
-          <h2>This is a test.</h2>
+<%= form_for(@registration) do |f| %>
+    <% if @registration.errors.any? %>
+        <div id="error_explanation" xmlns="http://www.w3.org/1999/html">
+          <h2><%= pluralize(@registration.errors.count, "error") %> prohibited this race from being saved:</h2>
 
           <ul>
-
-            <li>1</li>
-            <li>2/li>
-
+            <% @registration.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
           </ul>
         </div>
+    <% end %>
+
+    <h1> Register for event:  Event: <%= @event.name %> (screen 2)        </h1>
+    <h2> Race selected: <%= @race.name %> </h2>
+
+    <div>
+
+
+    </div>
+
+    <p>Enter personal information:</p>
+    <div class="field">
+
+     <br> <%= f.label Last %>  <%= f.text_field :last_name %>
+     <br> <%= f.label First %> <%= f.text_field :first_name %>
+     <br> <%= f.label MI %> <%= f.text_field :middle_init %>
+
+     <br> <%= f.label E-mail %> <%= f.text_field :email_address %>
+     <br> <%= f.label Birth Date %>  <%= f.text_field :born_on %>
+     <br> <%= f.label Gender %> <%= f.text_field :gender %>
+     <br> <%= f.label T-shirt %> <%=  f.text_field :tshirt_size %>
+
+
+    </div>
+    </p>
+
+    <div>
+      <%= f.label :registered_at %>
+      <%= f.text_field :registered_at %>
+
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+
+
+    </div>
+
+    <p>Have an account?  Log in here!</p>
+
+    <div class="field">
+
+      <%= form_tag  do %>
+          E-mail: <%= text_field_tag :email_address %>
+          Password: <%= text_field_tag :password %>
+          <%=  submit_tag "Log in" %>
+      <% end %>
+
+    </div>
+
+
+
+
+<% end %>

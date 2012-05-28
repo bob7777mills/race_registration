@@ -24,7 +24,7 @@
       <%= f.label :race_id %>
 
       <% @races.each do |row| %>
-      <br><%= radio_button_tag 'user_id', row.id, false %>    <%= row.race_display_values %>
+      <br><%= radio_button_tag 'race_id', row.id, false %>    <%= row.race_display_values %>
        <% end %>
 
       </div>

@@ -24,8 +24,9 @@
   resources :users
 
   match '/register_step_1', :to => 'registrations#register_step_1', :as => "register_step_1"
+  match '/register_step_2', :to => 'registrations#register_step_2', :as => "register_step_2"
 
-  #match 'registrations/register_step_1' => 'registrations#register_step_1', :as => :register_step_1
+    #match 'registrations/register_step_1' => 'registrations#register_step_1', :as => :register_step_1
   #'match 'registrations/:id/register_step_2' => 'registrations#register_step_2', :as => :register_step_2
 
 

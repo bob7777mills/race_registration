@@ -41,9 +41,14 @@ class RegistrationsController < ApplicationController
   # POST /registrations.json
   def create
     @registration = Registration.new(params[:registration])
-    @registration.registered_at="2222-02-22 22:22:22"
-   # @pricings=Pricing.find(params[:race_id])
-   # @registration.pricing_id = @pricings.find_last_by_ends_on
+    @registration.registered_at=Time.now
+    #raceid = :race_id
+    raceid = 3
+    thedate= Date.today
+    #@pricing=Pricing.all( :conditions => [ "race_id = ? and ? between starts_on and ends_on", raceid, thedate] )
+    @pricing=Pricing.all( :conditions => [ "race_id = 3 and '2012-05-27' between starts_on and ends_on"] )
+    @registration.pricing_id = @pricing.id
+
 
     respond_to do |format|
       if @registration.save
@@ -87,10 +92,10 @@ class RegistrationsController < ApplicationController
 
   def register_step_1
     @registration = Registration.new
-    @registration.created_at = "2199-12-31 23:59:59"
-    @registration.updated_at = "2199-12-31 23:59:59"
+    #@registration.created_at = "2199-12-31 23:59:59"
+    #@registration.updated_at = "2199-12-31 23:59:59"
     @registration.registered_at = "2199-12-31 23:59:59"
-    @registration.pricing_id = 3
+    #@registration.pricing_id = 3
     @event = Event.find(1)
     @races = @event.races
     #respond_to do |format|
@@ -101,6 +106,8 @@ class RegistrationsController < ApplicationController
 
   end
 
-
+ def register_step_2
+   @race=Race.find(3)
+ end
 
 end
